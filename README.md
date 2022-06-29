@@ -16,9 +16,9 @@ At this point you are ready to go, use !help command to learn more about ratBot'
 
 ## Running in Development
 
-The [master branch](https://github.com/a1sauc/mlsa-dev/tree/main) is the latest working copy of the project. It should be considered unstable.
+The [source repo](https://github.com/a1sauc/ratBot) is the latest working copy of the project. It should be considered unstable.
 
-The [Docker branch](https://github.com/a1sauc/mlsa-dev/tree/docker) is the Docker implementation of the project. Likewise, it should be considered unstable.
+The [Docker repo](https://github.com/mlsa-dev/ratBot-docker) is the Docker implementation of the project. Likewise, it should be considered unstable.
 
 ## Environment Variables
 
