@@ -5,6 +5,8 @@ services:
       - ratbot
     networks:
       - ratbot
+    ports:
+      - 127.0.0.1:3306:3306/tcp
     volumes:
       - db_data:/var/lib/mysql
     env_file: ./.mysql.env
