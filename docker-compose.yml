@@ -1,0 +1,51 @@
+services:
+  mariadb:
+    container_name: mariadb
+    depends_on:
+      - ratbot
+    networks:
+      - ratbot
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file: ./.mysql.env
+    environment:
+      - TZ=America/Chicago
+    restart: on-failure
+    image: mariadb:10.3
+
+  #mysql:
+    #container_name: mysql
+    #depends_on:
+      #- ratbot
+    #networks:
+      #- ratbot
+    #volumes:
+      #- db_data:/var/lib/mysql
+    #env_file: ./.mysql.env
+    #environment:
+      #- TZ=America/Chicago
+    #restart: on-failure
+    #image: mysql:8
+
+  ratbot:
+    container_name: ratbot
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RATBOT_SRC_COMMIT: d6d02a5
+    networks:
+      - ratbot
+    env_file: ./.env
+    environment:
+      - TZ=America/Chicago
+    restart: on-failure
+    image: ratbot:d6d02a5
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  ratbot:
+    external: true

@@ -1,0 +1,8 @@
+src/.env
+venv/*
+.vscode/
+
+**.env
+
+data/**
+logs/**
