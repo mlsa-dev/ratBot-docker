@@ -35,14 +35,14 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        RATBOT_SRC_COMMIT: ceef739
+        RATBOT_SRC_COMMIT: 474c7f1
     networks:
       - ratbot
     env_file: ./.env
     environment:
       - TZ=America/Chicago
     restart: on-failure
-    image: ratbot:ceef739
+    image: ratbot:474c7f1
 
 volumes:
   db_data:
